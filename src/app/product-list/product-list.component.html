@@ -1,0 +1,35 @@
+<h2>Products</h2>
+
+<div *ngFor="let product of products">
+
+  <h3>
+    <a
+      [title]="product.name + ' details'"
+      [routerLink]="['/products', product.id]">
+      {{ product.name }} - 
+      {{ product.price }} $
+    </a>
+  </h3>
+
+  <p *ngIf="product.description">
+    Description: {{ product.description }}
+  </p>
+
+  
+
+  <div *ngIf="!product.available">
+    <p>The product is currently not available. You can click the button below to be notified when we have this phone in storage.</p>
+
+    <app-product-alerts
+    [product]="product"
+    (notify)="onNotify()">
+    </app-product-alerts>
+  </div>
+
+  <button type="button" (click)="share()">
+    Share
+  </button>
+
+  <hr style="border: 1px solid #000;">
+
+</div>
