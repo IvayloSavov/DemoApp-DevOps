@@ -37,8 +37,8 @@ jobs:
     - name: Install dependencies
       run: npm install --force
     
-    # - name: Run the tests of the application
-      # run: npm run testpl
+    - name: Run the tests of the application
+      run: npm run test:pl
       
     - name: Run the build of the application
       run: npm run build --if-present
