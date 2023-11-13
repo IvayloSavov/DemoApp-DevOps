@@ -27,6 +27,6 @@ describe('ProductListComponent', () => {
   it('should call onNotify and display alert', () => {
     spyOn(window, 'alert');
     component.onNotify();
-    expect(window.alert).toHaveBeenCalledWith('You will be notified when the product goes on sale');
+    expect(window.alert).toHaveBeenCalledWith('You will be notified when the product is available.');
   });
 });
